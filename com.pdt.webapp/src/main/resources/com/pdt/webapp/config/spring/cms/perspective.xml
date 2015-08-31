@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="com.pdt.cms.ui.PerspectiveDefinition" class ="com.pdt.cms.ui.PerspectiveDefinition" factory-method="createPerspective">
+		<constructor-arg>
+			<list>
+				<ref bean="dashboardPerspective"/>
+				<ref bean="tourManagementPerspective"/>
+				<ref bean="eventManagementPerspective"/>
+				<ref bean="hotelManagementPerspective"/>
+				<ref bean="slideImagesManagementPerspective"/>
+				<ref bean="requestManagementPerspective"/>
+				<ref bean="globalStaticContent"/>
+				<ref bean="serviceStaticContent"/>
+				<ref bean="tipStaticContent"/>
+			</list>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="dashboardGroup" class="com.pdt.cms.ui.model.GroupModel">
+		<property name="id" value="dashboardGroup"/>
+		<property name="caption" value="Dashboard"/>
+		<property name="order" value="0"></property>
+	</bean>
+	
+	<bean id="tourManagementGroup" class="com.pdt.cms.ui.model.GroupModel">
+		<property name="id" value="tourManagementGroup"/>
+		<property name="caption" value="Tour"/>
+		<property name="order" value="1"></property>
+	</bean>
+
+	<bean id="destinationManagementGroup" class="com.pdt.cms.ui.model.GroupModel">
+		<property name="id" value="destManagementGroup"/>
+		<property name="caption" value="Địa danh"/>
+		<property name="order" value="2"></property>
+	</bean>
+
+	<bean id="requestManagementGroup" class="com.pdt.cms.ui.model.GroupModel">
+		<property name="id" value="requestManagementGroup"/>
+		<property name="caption" value="Đặt dịch vụ"/>
+		<property name="order" value="3"></property>
+	</bean>
+
+	<bean id="staticContentManagementGroup" class="com.pdt.cms.ui.model.GroupModel">
+		<property name="id" value="staticContentManagementGroup"/>
+		<property name="caption" value="Thông tin"/>
+		<property name="order" value="4"></property>
+	</bean>
+
+	<bean id="frontendDecorateGroup" class="com.pdt.cms.ui.model.GroupModel">
+		<property name="id" value="frontendDecorateGroup"/>
+		<property name="caption" value="Giao diện"/>
+		<property name="order" value="5"></property>
+	</bean>
+
+	<bean id="dashboardPerspective" class="com.pdt.cms.ui.perspective.DashboardPerspective">
+		<constructor-arg>
+			<bean id="dashboarPerspectiveModel" class="com.pdt.cms.ui.model.PerspectiveModel">	
+				<property name="caption" value="Dashboard"/>
+				<property name="path" value="dashboard"/>
+				<property name="title" value="Dashboard"/>
+				<property name="contentClasses">
+					<list>
+						<value>com.pdt.cms.ui.content.DashboardContent</value>
+					</list>
+				</property>
+				<property name="order" value="0"/>
+				<property name="group" ref="dashboardGroup"></property>
+			</bean>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="tourManagementPerspective" class="com.pdt.cms.ui.perspective.TourManagementPerspective">
+		<constructor-arg>
+			<bean id="tourManagementPerspectiveModel" class="com.pdt.cms.ui.model.PerspectiveModel">	
+				<property name="caption" value="Quản lý tour"/>
+				<property name="path" value="tourmanagement"/>
+				<property name="title" value="Quản lý tour"/>
+				<property name="contentClasses">
+					<list>
+						<value>com.pdt.cms.ui.content.TourManagementContent</value>
+						<value>com.pdt.cms.ui.content.SubjectManagementContent</value>
+					</list>
+				</property>
+				<property name="order" value="1"/>
+				<property name="group" ref="tourManagementGroup"/>
+			</bean>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="eventManagementPerspective" class="com.pdt.cms.ui.perspective.EventManagementPerspective">	
+		<constructor-arg>
+			<bean id="subjectManagementPerspectiveModel" class="com.pdt.cms.ui.model.PerspectiveModel">	
+				<property name="caption" value="Sự kiện"/>
+				<property name="path" value="event"/>
+				<property name="title" value="Quản lý sự kiện"/>
+				<property name="contentClasses">
+					<list>
+						<value>com.pdt.cms.ui.content.EventManagementContent</value>
+					</list>
+				</property>
+				<property name="order" value="2"/>
+				<property name="group" ref="tourManagementGroup"/>
+			</bean>
+		</constructor-arg>
+	</bean>
+
+	<bean id="hotelManagementPerspective" class="com.pdt.cms.ui.perspective.HotelManagementPerspective">	
+		<constructor-arg>
+			<bean id="hotelManagementPerspectiveModel" class="com.pdt.cms.ui.model.PerspectiveModel">	
+				<property name="caption" value="Hotel"/>
+				<property name="path" value="hotel"/>
+				<property name="title" value="Quản l Hotel"/>
+				<property name="contentClasses">
+					<list>
+						<value>com.pdt.cms.ui.content.HotelManagementContent</value>
+					</list>
+				</property>
+				<property name="order" value="0"/>
+				<property name="group" ref="destinationManagementGroup"/>
+			</bean>
+		</constructor-arg>
+	</bean>
+
+	<bean id="requestManagementPerspective" class="com.pdt.cms.ui.perspective.RequestManagementPerspective">	
+		<constructor-arg>
+			<bean id="requestManagementPerspectiveModel" class="com.pdt.cms.ui.model.PerspectiveModel">	
+				<property name="caption" value="Yêu cầu"/>
+				<property name="path" value="booking"/>
+				<property name="title" value="Quản lý yêu cầu"/>
+				<property name="contentClasses">
+					<list>
+						<value>com.pdt.cms.ui.content.TourRequestManagementContent</value>
+						<value>com.pdt.cms.ui.content.HotelRequestManagementContent</value>
+					</list>
+				</property>
+				<property name="order" value="0"/>
+				<property name="group" ref="requestManagementGroup"/>
+			</bean>
+		</constructor-arg>
+	</bean>
+
+	<bean id="globalStaticContent" class="com.pdt.cms.ui.perspective.GlobalStaticContentManagement">	
+		<constructor-arg>
+			<bean id="globalContentManagementPerspectiveModel" class="com.pdt.cms.ui.model.PerspectiveModel">	
+				<property name="caption" value="Thông tin chung"/>
+				<property name="path" value="globalContent"/>
+				<property name="title" value="Quản lý thông tin chung"/>
+				<property name="contentClasses">
+					<list>
+						<value>com.pdt.cms.ui.content.GlobalContentManagementContent</value>
+					</list>
+				</property>
+				<property name="order" value="0"/>
+				<property name="group" ref="staticContentManagementGroup"/>
+			</bean>
+		</constructor-arg>
+	</bean>
+	<bean id="serviceStaticContent" class="com.pdt.cms.ui.perspective.ServiceManagementPerspective">	
+		<constructor-arg>
+			<bean id="serviceContentManagementPerspectiveModel" class="com.pdt.cms.ui.model.PerspectiveModel">	
+				<property name="caption" value="Dịch vụ"/>
+				<property name="path" value="serviceContent"/>
+				<property name="title" value="Quản lý thông tin dịch vụ"/>
+				<property name="contentClasses">
+					<list>
+						<value>com.pdt.cms.ui.content.ServiceStaticContentManagement</value>
+					</list>
+				</property>
+				<property name="order" value="1"/>
+				<property name="group" ref="staticContentManagementGroup"/>
+			</bean>
+		</constructor-arg>
+	</bean>
+	<bean id="tipStaticContent" class="com.pdt.cms.ui.perspective.TipContentManagementPerspective">	
+		<constructor-arg>
+			<bean id="tipContentManagementPerspectiveModel" class="com.pdt.cms.ui.model.PerspectiveModel">	
+				<property name="caption" value="Chia sẻ"/>
+				<property name="path" value="tipContent"/>
+				<property name="title" value="Quản lý thông tin chia sẻ"/>
+				<property name="contentClasses">
+					<list>
+						<value>com.pdt.cms.ui.content.TipStaticContentManagement</value>
+					</list>
+				</property>
+				<property name="order" value="2"/>
+				<property name="group" ref="staticContentManagementGroup"/>
+			</bean>
+		</constructor-arg>
+	</bean>
+
+	<bean id="slideImagesManagementPerspective" class="com.pdt.cms.ui.perspective.SlideImagesManagementPerspective">	
+		<constructor-arg>
+			<bean id="subjectManagementPerspectiveModel" class="com.pdt.cms.ui.model.PerspectiveModel">	
+				<property name="caption" value="Homepage images"/>
+				<property name="path" value="image"/>
+				<property name="title" value="Quan ly slide ảnh trang chủ"/>
+				<property name="contentClasses">
+					<list>
+						<value>com.pdt.cms.ui.content.SlideImagesManagementContent</value>
+					</list>
+				</property>
+				<property name="order" value="2"/>
+				<property name="group" ref="frontendDecorateGroup"/>
+			</bean>
+		</constructor-arg>
+	</bean>
+</beans>

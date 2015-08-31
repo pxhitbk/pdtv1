@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+ <!DOCTYPE tiles-definitions PUBLIC  
+     "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"  
+     "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">  
+
+ <tiles-definitions>  
+	<!-- Common -->
+   <definition name="masterpage" template="/WEB-INF/views/segments/masterpage.jsp" >  
+     <put-attribute name="header" value="/WEB-INF/views/segments/header.jsp" />  
+     <put-attribute name="content" value="" />  
+     <put-attribute name="footer" value="/WEB-INF/views/segments/footer.jsp" />
+   </definition>  
+
+	<!-- Home -->
+	<definition name="home" extends="masterpage">
+   	<put-attribute name="content"> 
+   		<definition template="/WEB-INF/views/home.jsp">
+			<put-attribute name="contactbox" value="/WEB-INF/views/segments/contactbox.jsp" />   			
+   		</definition>
+   	</put-attribute>
+   </definition>
+   
+   <definition name="introduction" extends="masterpage">  
+     <put-attribute name="content" value="/WEB-INF/views/introduction.jsp" />  
+   </definition>  
+	
+	<!-- Tour module -->
+   <definition name="listtour" extends="masterpage">  
+     <put-attribute name="content"> 
+	     <definition template="/WEB-INF/views/tour/listtour.jsp">
+				<put-attribute name="contactbox" value="/WEB-INF/views/segments/contactbox.jsp" />   			
+	   		</definition>
+		</put-attribute> 
+   </definition>
+   
+   <definition name="searchresults" extends="masterpage">  
+     <put-attribute name="content"> 
+	     <definition template="/WEB-INF/views/tour/searchresults.jsp">
+				<put-attribute name="contactbox" value="/WEB-INF/views/segments/contactbox.jsp" />   			
+	   		</definition>
+		</put-attribute> 
+   </definition>
+     
+   <definition name="tourdetails" extends="masterpage">  
+     <put-attribute name="content"> 
+	     <definition template="/WEB-INF/views/tour/detailstour.jsp">
+				<put-attribute name="contactbox" value="/WEB-INF/views/segments/contactbox.jsp" />   			
+	   		</definition>
+		</put-attribute>
+   </definition>
+   
+   <!-- Hotel module -->
+   <definition name="hotels" extends="masterpage">  
+     <put-attribute name="content"> 
+	     <definition template="/WEB-INF/views/hotel/hotels.jsp">
+				<put-attribute name="contactbox" value="/WEB-INF/views/segments/contactbox.jsp" />   			
+	   		</definition>
+		</put-attribute> 
+   </definition>
+   <definition name="hoteldetails" extends="masterpage">  
+     <put-attribute name="content"> 
+	     <definition template="/WEB-INF/views/hotel/hoteldetails.jsp">
+				<put-attribute name="contactbox" value="/WEB-INF/views/segments/contactbox.jsp" />   			
+	   		</definition>
+		</put-attribute> 
+   </definition>
+   
+   <definition name="aboutus" extends="masterpage">
+   	<put-attribute name="content"> 
+   		<definition template="/WEB-INF/views/home/aboutus.jsp">
+			<put-attribute name="contactbox" value="/WEB-INF/views/segments/contactbox.jsp" />   			
+   		</definition>
+   	</put-attribute>
+   </definition>
+   <definition name="contactus" extends="masterpage">
+   	<put-attribute name="content"> 
+   		<definition template="/WEB-INF/views/home/contactus.jsp">
+			<put-attribute name="contactbox" value="/WEB-INF/views/segments/contactbox.jsp" />   			
+   		</definition>
+   	</put-attribute>
+   </definition>
+   <definition name="tourdesign" extends="masterpage">
+   	<put-attribute name="content"> 
+   		<definition template="/WEB-INF/views/home/tourdesign.jsp">
+			<put-attribute name="contactbox" value="/WEB-INF/views/segments/contactbox.jsp" />   			
+   		</definition>
+   	</put-attribute>
+   </definition>
+   <definition name="service" extends="masterpage">
+   	<put-attribute name="content"> 
+   		<definition template="/WEB-INF/views/content/service.jsp">
+			<put-attribute name="contactbox" value="/WEB-INF/views/segments/contactbox.jsp" />   			
+   		</definition>
+   	</put-attribute>
+   </definition>
+   <definition name="tip" extends="masterpage">
+   	<put-attribute name="content"> 
+   		<definition template="/WEB-INF/views/content/tip.jsp">
+			<put-attribute name="contactbox" value="/WEB-INF/views/segments/contactbox.jsp" />   			
+   		</definition>
+   	</put-attribute>
+   </definition>
+
+   <definition name="createsuccess" extends="masterpage">
+   	<put-attribute name="content">
+   		<definition template="/WEB-INF/views/home/commitsuccess.jsp"></definition>
+   	</put-attribute>
+   </definition>
+   
+   <!-- Error pages -->
+   <definition name="notfound" template="/WEB-INF/views/error/notfound.jsp"></definition>
+   <definition name="submitsuccess" template="/WEB-INF/views/home/commitsuccess.jsp"></definition>
+     
+</tiles-definitions> 

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- PDT core service -->
+	<bean id="coreServiceImpl" class="com.pdt.core.service.impl.CoreServiceImpl"/>
+	<bean id="tourServiceImpl" class="com.pdt.core.service.impl.TourServiceImpl"/>
+	
+	<!-- PDT application service -->
+	<bean id="pdtTourServiceImpl" class="com.pdt.service.impl.PdtTourServiceImpl" />
+	<bean id="pdtDestinationServiceImpl" class="com.pdt.service.impl.PdtDestinationServiceImpl" />
+	<bean id="pdtRequestServiceImpl" class="com.pdt.service.impl.PdtRequestServiceImpl" />
+	
+	<bean id="serviceResolver" factory-method="createServiceResolver" class="com.pdt.core.util.ServiceResolver">
+		<constructor-arg>
+			<map>
+				<entry key="com.pdt.core.service.CoreService" value-ref="coreServiceImpl"/>
+				<entry key="com.pdt.core.service.TourService" value-ref="tourServiceImpl"/>
+				<entry key="com.pdt.service.PdtTourService" value-ref="pdtTourServiceImpl"/>
+				<entry key="com.pdt.service.PdtDestinationService" value-ref="pdtDestinationServiceImpl"></entry>
+				<entry key="com.pdt.service.PdtRequestService" value-ref="pdtRequestServiceImpl"></entry>
+			</map>
+		</constructor-arg>
+	</bean>
+	<beans profile="dev">
+		<bean id="createDummyDataImpl" class="com.pdt.service.impl.CreateDummyDataImpl" />
+	</beans>
+</beans>

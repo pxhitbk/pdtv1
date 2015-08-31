@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+      http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+      http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+      http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<bean id="localEntityManagerFactoryBean"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="persistenceUnitName" value="pdt-webapp" />
+		<property name="jpaVendorAdapter">
+			<bean id="hibernateJpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
+		</property>
+		<property name="packagesToScan">
+			<list>
+				<value>com.pdt.core.model</value>
+				<value>com.pdt.webapp.model</value>
+			</list>
+		</property>
+		<property name="jpaProperties">
+			<props>
+				<!-- <prop key="hibernate.hbm2ddl.auto">create-drop</prop> -->
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.listeners.envers.autoRegister">false</prop>
+				<prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory</prop>
+				<prop key="hibernate.cache.use_second_level_cache">true</prop>
+				<prop key="hibernate.cache.region_prefix"></prop>
+				<prop key="hibernate.cache.use_query_cache">true</prop>
+				<prop key="javax.persistence.sharedCache.mode">ENABLE_SELECTIVE</prop> <!-- entities are not cached unless explicitly marked as cacheable. -->
+			</props>
+		</property>
+	</bean>
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/pdt?useUnicode=true&amp;characterEncoding=utf-8"></property> <!-- ?charset=utf8&amp;useUnicode=true&amp;characterEncoding=utf8mb4 -->
+		<property name="username" value="pdt" />
+		<property name="password" value="" />
+	</bean>
+	
+	<!-- Enable Entity Manager Injection for @PersistenceContext Annotation -->
+	<bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
+	
+	<bean id="jpaTransactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="localEntityManagerFactoryBean" />
+	</bean>
+	<tx:annotation-driven transaction-manager="jpaTransactionManager" proxy-target-class="true"/>
+</beans>

@@ -1,0 +1,36 @@
+@import "../reindeer/legacy-styles.css";
+
+.v-app, .v-window, .v-popupview-popup, .v-tooltip, .v-app input, .v-app select,
+.v-app button, .v-app textarea, .v-window input, .v-window select,
+.v-window button, .v-window textarea, .v-popupview-popup input,
+.v-popupview-popup select, .v-popupview-popup button,
+.v-popupview-popup textarea, .v-filterselect-suggestpopup,
+.v-datefield-popup, .v-contextmenu, .v-notification, .v-menubar-submenu,
+.v-drag-element, .v-customoverlay, .v-button-link .v-button-caption {
+  color: #222;
+  font-family: arial,helvetica,sans-serif;
+  font-size: 12px;
+}
+
+.v-app {
+    background: white;
+    font-size: 42px;
+}
+
+.v-app input.v-textfield, .v-window input.v-textfield, 
+.v-app textarea.v-textarea, .v-window textarea.v-textarea {
+	width: 400px;
+}
+
+/*
+	color scheme: FFE39B, BFAF87, A68532, FFEAB4, FFEFC8
+*/
+
+.cmsui-systemwide{background: #FFE39B;}
+
+.cmsui-webcontainer{background: #ffffff; width: 1000px;}
+
+.cmsui-header{background: #bfbfbf; height: 100px;}
+.cmsui-header .v-menubar{width: 1000px;}
+
+.cms-perspectivecontainer{}

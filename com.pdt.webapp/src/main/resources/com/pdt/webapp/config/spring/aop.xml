@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:aop="http://www.springframework.org/schema/aop"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans 
+     http://www.springframework.org/schema/beans/spring-beans.xsd
+     http://www.springframework.org/schema/aop
+     http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+<!-- Define aspect bean -->
+<bean id="com.pdt.util.TraceWebappFlowAspect" class="com.pdt.util.TraceWebappFlowAspect" />
+<aop:config>
+	<aop:aspect ref="com.pdt.util.TraceWebappFlowAspect">
+		<!-- the execution of any method defined in the servlet package -->
+		<aop:pointcut expression="execution(* com.pdt.core.service.impl.*.*(..))" id="traceServlet"/>
+		<!-- <aop:pointcut expression="execution(* org.springframework.web.servlet.DispatcherServlet.*(..))" id="traceServlet"/> -->
+		<aop:before method="before" pointcut-ref="traceServlet"/>
+		<aop:after method="after" pointcut-ref="traceServlet"/>
+	</aop:aspect>
+</aop:config>
+	
+</beans>

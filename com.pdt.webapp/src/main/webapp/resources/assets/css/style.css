@@ -1,0 +1,548 @@
+﻿.tour-box {
+    margin-bottom: 30px;
+}
+
+.head-info {
+    background-color: #008cd1;
+}
+
+.head-danger {
+    background-color: #bb161d;
+}
+
+.head-arrow {
+    display: inline-block;
+    background: url('../img/box-shadow.png') no-repeat center center;
+    width: 21px;
+    height: 7px;
+}
+
+.arrow {
+    display: inline-block;
+    background: url('../img/arrow.png') no-repeat center center;
+    width: 4px;
+    height: 6px;
+}
+
+.header-top {
+    background: #0095d9 url('../img/banner.jpg') no-repeat center center;
+    height: 80px;
+}
+
+.header-link {
+    list-style: none;
+    margin-top: 20px;
+}
+
+    .header-link li {
+        display: inline-block;
+        border-left: 2px solid #000;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+        .header-link li:first-child {
+            border-left-width: 0;
+            padding-left: 0;
+        }
+
+        .header-link li:last-child {
+            padding-right: 0;
+        }
+
+        .header-link li a {
+            color: #000;
+            font-weight: bold;
+        }
+
+.header-menu {
+    background: url('../img/menu-background.png') repeat-x;
+    height: 43px;
+}
+
+.nav-main-menu {
+    position: relative;
+}
+
+.main-menu {
+    display: table;
+    height: 43px;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    float: right;
+}
+
+    .main-menu > li {
+        display: table-cell;
+        border: 1px solid #fff;
+        border-width: 0 0 0 1px;
+        -webkit-border-image: url('../img/menu-separator.png') 0 1 round; /* Safari 3.1-5 */
+        -o-border-image: url('../img/menu-separator.png') 0 1 round; /* Opera 11-12.1 */
+        -moz-border-image: url('../img/menu-separator.png') 0 1 round;
+        -ms-border-image: url('../img/menu-separator.png') 0 1 round;
+        border-image: url('../img/menu-separator.png') 0 1 round;
+    }
+
+        .main-menu > li:first-child {
+            border-left-width: 0;
+        }
+
+        .main-menu > li:nth-child(2) {
+            border-left-width: 0;
+        }
+
+        .main-menu > li > a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            line-height: 43px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+    .main-menu li.has-sub-menu:hover > a {
+        background: url('../img/menu-hover.png') no-repeat center 35px;
+    }
+
+.main-sub-menu {
+    display: none;
+    background-color: #f2f2f2;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    -ms-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    position: absolute;
+    top: 43px;
+    right: 0;
+    z-index: 1000;
+    padding: 10px;
+}
+
+    .main-sub-menu table tr td {
+        padding: 5px 15px;
+        border-left: 1px solid #e8e8e8;
+    }
+
+        .main-sub-menu table tr td:first-child {
+            border-left-width: 0;
+        }
+
+    .main-sub-menu h6 {
+        border-bottom: 1px solid #e5e5e5;
+        font-weight: bold;
+        margin-bottom: 0;
+    }
+
+    .main-sub-menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .main-sub-menu a {
+        color: #000;
+    }
+
+.main-menu > li.has-sub-menu:hover .main-sub-menu, .main-menu > li.has-sub-menu:focus .main-sub-menu, .main-menu > li.has-sub-menu:active .main-sub-menu, .main-menu > li.has-sub-menu.active .main-sub-menu {
+    display: block;
+}
+
+.menu-type-2 {
+    position: relative;
+}
+
+    .menu-type-2 ul {
+        display: none;
+        background-color: #f2f2f2;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+        -ms-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+        position: absolute;
+        right: 0;
+        top: 43px;
+        z-index: 1000;
+    }
+
+    .menu-type-2:hover ul {
+        display: block;
+    }
+
+    .menu-type-2 ul li {
+        border-top: 1px solid #ccc;
+    }
+
+        .menu-type-2 ul li a {
+            display: block;
+            white-space: nowrap;
+            text-decoration: none;
+            padding: 5px 10px;
+            -moz-min-width: 150px;
+            -ms-min-width: 150px;
+            -o-min-width: 150px;
+            -webkit-min-width: 150px;
+            min-width: 150px;
+        }
+
+            .menu-type-2 ul li a:hover, .menu-type-2 ul li a:focus, .menu-type-2 ul li a:active, .menu-type-2 ul li a.active {
+                background-color: #c0c0c0;
+            }
+
+.main-panel {
+    background: url('../img/main-background.png') no-repeat center top;
+    padding-top: 15px;
+}
+
+.tour-carousel-indicators {
+    bottom: 10px;
+    right: 0;
+    left: auto;
+    width: auto;
+    padding-right: 35px;
+}
+
+.tour-item, .culture-item {
+    position: relative;
+    /*overflow: hidden;*/
+}
+
+    .tour-item .desc, .culture-item .desc {
+        background-color: #000000;
+        background-color: rgba(0, 0, 0, 0.48);
+        color: #fff;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+        .tour-item .desc a, .culture-item .desc a {
+            display: block;
+            color: inherit;
+            font-weight: bold;
+            white-space: nowrap;
+            -ms-text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+            -moz-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            padding: 5px 10px;
+        }
+
+        .culture-item .desc p {
+            margin-bottom: 0;
+            padding: 5px 10px;
+        }
+
+
+.tour-head {
+    color: #fff;
+    position: relative;
+    /*overflow: hidden;*/
+    margin-left: -20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+    .tour-head.inline-block {
+        display: inline-block;
+    }
+
+    .tour-head h5 {
+        font-weight: bold;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .tour-head .head-arrow {
+        position: absolute;
+        top: 35px;
+    }
+
+.tour-time ul {
+    list-style-image: url('../img/arrow.png');
+    list-style-position: inside;
+    margin: 0;
+    padding-left: 0;
+}
+
+.suggession-tour-top {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 36px;
+}
+
+.suggession-tour-top .tour-item img {
+width: 100%;
+height: 162px;
+}
+
+.tour-filters .tour-content {
+    background-color: #fff;
+    border: 1px solid #dfe0e0;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.region-filters .tour-content,
+.services-filters .tour-content,
+.tips-filters .tour-content {
+    background-color: #fff;
+    border: 1px solid #dfe0e0;
+    padding-top: 15px;
+}
+
+    .region-filters .tour-content ul {
+        margin: 0;
+        padding: 0 15px;
+        list-style-image: url('../img/arrow.png');
+        list-style-position: inside;
+    }
+
+        .region-filters .tour-content ul li {
+            border-top: 1px solid #ddd;
+            padding: 7px 0;
+        }
+
+            .region-filters .tour-content ul li:first-child {
+                border-top-width: 0;
+            }
+
+.home-contact {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.event-most-tour {
+    background-color: #f7f7f7;
+    padding: 20px;
+}
+
+.event-list, .most-favorite {
+    border: 2px solid #e1e1e1;
+}
+
+    .event-list .tour-head, .most-favorite .tour-head {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+
+    .event-list .tour-content, .most-favorite .tour-content {
+        border-top: 1px solid #e1e1e1;
+    }
+
+        .event-list .tour-content .box-scroll {
+            max-height: 209px;
+            overflow-y: auto;
+        }
+
+            .event-list .tour-content .box-scroll table {
+                width: 100%;
+            }
+
+        .event-list .tour-content table tr td {
+            border-top: 1px solid #e1e1e1;
+            border-left: 1px solid #fff;
+            font-weight: bold;
+            padding: 7px 10px;
+        }
+
+            .event-list .tour-content table tr td:first-child {
+                border-left-width: 0;
+            }
+
+        .event-list .tour-content table tr:first-child td {
+            border-top-width: 0;
+        }
+
+    .most-favorite ul,
+    .culture-travel ul {
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+    }
+
+    .most-favorite ul {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+        .most-favorite ul li {
+            border-top: 2px solid #eee;
+            border-bottom: 1px solid #e1e4e6;
+        }
+
+            .most-favorite ul li table {
+                width: 100%;
+            }
+
+                .most-favorite ul li table h6 {
+                    font-weight: bold;
+                }
+
+
+                    .most-favorite ul li table h6 a {
+                        color: #bb161d;
+                    }
+
+.culture-travel .tour-head {
+    color: #008cd1;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 20px;
+    margin-left: 0;
+}
+
+    .culture-travel .tour-head img {
+        float: left;
+        margin-right: 10px;
+    }
+
+    .culture-travel .tour-head h5 {
+        line-height: 28px;
+    }
+
+.culture-travel .tour-content .culture-item {
+    margin-top: 15px;
+}
+
+.culture-travel .tour-content ul li:first-child .culture-item {
+    margin-top: 0;
+}
+
+.tours-list ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+    .tours-list ul li {
+        border-top: 1px solid #dfdfdf;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+.tour-list-item .photo {
+    float: left;
+    margin-right: 15px;
+}
+
+.tour-form-panel {
+    position: relative;
+    padding: 45px 15px 15px;
+}
+
+.footer-panel {
+    background-color: #0095d9;
+    color: #fff;
+}
+
+.list-links {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+    .list-links li a {
+        color: inherit;
+    }
+
+.socials-network {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+    .socials-network ul {
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+    }
+
+        .socials-network ul li {
+            display: inline-block;
+        }
+
+.tour-address a {
+    color: #fff;
+}
+
+.tips-filters .tip-item table tr td {
+    padding: 3px;
+    vertical-align: middle;
+}
+
+    .tips-filters .tip-item table tr td.photo {
+        width: 83px;
+    }
+
+.tour-comments table {
+    width: 100%;
+}
+
+    .tour-comments table tr td {
+        padding-left: 20px;
+        vertical-align: top;
+    }
+
+        .tour-comments table tr td:first-child {
+            padding-left: 0;
+        }
+
+
+.others-comments ul {
+    list-style: none;
+    margin: 0;
+    padding-top: 20px;
+    padding-left: 0;
+}
+
+    .others-comments ul li {
+        border-top: 1px solid #ccc;
+        padding: 10px 0;
+    }
+
+.tour-list-item {
+	-ms-border-radius: 0;
+    border-radius: 0;
+    padding: 5px;
+}
+
+/* TOUR DETAIL SLIDER */
+.tour-items-slider #bx-pager {
+    text-align: center;
+    margin-top: -30px;
+}
+
+    .tour-items-slider #bx-pager a {
+        margin: 0 3px;
+    }
+
+        .tour-items-slider #bx-pager a img {
+            border: solid #ccc 1px;
+            width: 71px;
+            height: 71px;
+            padding: 3px;
+        }
+
+        .tour-items-slider #bx-pager a:hover img,
+        .tour-items-slider #bx-pager a.active img {
+            border: solid #5280DD 1px;
+        }
+
+.img-thumbnail {
+	max-width: 180px;
+}
+
+.culture-item img {
+	max-height: 240px;
+	width: 100%;
+}
