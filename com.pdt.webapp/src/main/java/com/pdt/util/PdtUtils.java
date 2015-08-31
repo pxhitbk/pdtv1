@@ -85,6 +85,7 @@ public final class PdtUtils implements PdtConstants {
 	public static void writingImageFile(Image image, String path) throws IOException {
 		InputStream in = new ByteArrayInputStream(image.getData());
 		BufferedImage bImageFromConvert = ImageIO.read(in);
+		LOGGER.info("write image " + path + "/" + image.getFileName());
 		ImageIO.write(bImageFromConvert, image.getFileName().substring(image.getFileName().lastIndexOf(".") + 1),
 				new File(path + "/" + image.getFileName()));
 	}
